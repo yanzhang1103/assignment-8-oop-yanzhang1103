@@ -1,5 +1,32 @@
 # TECHIN 509: Week 8 Assignment
 
+## Submission Instructions
+
+Organize your repository as follows for your submission. Each problem folder must include its own README.md file that clearly states:
+- The problem description (copied or summarized).
+- How to run the solution (including dependencies and command-line instructions).
+- Associate explanations.
+- Sample input and output if applicable.
+
+```cmd
+root/
+│
+├── tic_tac_toe/
+│   ├── README.md
+│   └── (source code files)
+│
+├── LR/
+│   ├── README.md
+│   └── (source code files)
+│
+├── GW/
+│   ├── README.md
+│   └── (source code files)
+│
+└── main README.md (optional)
+```
+
+
 ## Tic-Tac-Toe Game
 
 You have now implemented a few functions as parts of a Tic-Tac-Toe game. In this assignment, you will complete the provided templates to implement a simple Tic-Tac-Toe game. 
@@ -162,4 +189,5 @@ Build a simple **grid world navigation system**. You will create classes to repr
 * Print the path length and nodes expanded.
 * Render the path on the grid.
 * Step the agent along the path, re-rendering at each step.
+
 
