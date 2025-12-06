@@ -3,7 +3,7 @@ class Board:
         self.grid = [[" " for _ in range(3)] for _ in range(3)]
 
     def draw_board(self):
-   
+      
         for i, row in enumerate(self.grid):
             print(" | ".join(cell if cell != " " else " " for cell in row))
 
@@ -11,27 +11,46 @@ class Board:
                 print("-" * 9)
 
 
-    def update_board(self, row: int, col: int, symbol: str) -> bool:
-        """
-        Update the game board based on location selected by player
 
-        Args:
-            row (int): row index of board
-            col (int): column index of board
-            symbol (str): symbol used by player
-        """
+    def update_board(self, row: int, col: int, symbol: str) -> bool:
+        
         if self.grid[row][col] == " ":
             self.grid[row][col] = symbol
             return True
         return False
 
     def check_winner(self) -> str:
-        """
-        Check the winner of the current board
+  
 
-        Returns:
-            str: The winning symbol ('X' or 'O') if there is a winner, else an empty string
-        """
+        for row in self.grid:
+            if row[0] != " " and row[0] == row[1] == row[2]:
+                return row[0]
+
+    # Check columns
+        for col in range(3):
+            if (
+                self.grid[0][col] != " "
+                and self.grid[0][col] == self.grid[1][col] == self.grid[2][col]
+        ):
+                return self.grid[0][col]
+
+    # Check diagonal (top-left → bottom-right)
+        if (
+            self.grid[0][0] != " "
+            and self.grid[0][0] == self.grid[1][1] == self.grid[2][2]
+    ):
+         return self.grid[0][0]
+
+    # Check diagonal (top-right → bottom-left)
+        if (
+            self.grid[0][2] != " "
+            and self.grid[0][2] == self.grid[1][1] == self.grid[2][0]
+    ):
+            return self.grid[0][2]
+
+    # No winner
+        return ""
+
 
     def is_full(self) -> bool:
         """
