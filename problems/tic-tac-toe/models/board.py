@@ -26,7 +26,6 @@ class Board:
             if row[0] != " " and row[0] == row[1] == row[2]:
                 return row[0]
 
-    # Check columns
         for col in range(3):
             if (
                 self.grid[0][col] != " "
@@ -34,14 +33,12 @@ class Board:
         ):
                 return self.grid[0][col]
 
-    # Check diagonal (top-left → bottom-right)
         if (
             self.grid[0][0] != " "
             and self.grid[0][0] == self.grid[1][1] == self.grid[2][2]
     ):
          return self.grid[0][0]
 
-    # Check diagonal (top-right → bottom-left)
         if (
             self.grid[0][2] != " "
             and self.grid[0][2] == self.grid[1][1] == self.grid[2][0]
