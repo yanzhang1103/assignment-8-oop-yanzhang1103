@@ -3,9 +3,13 @@ class Board:
         self.grid = [[" " for _ in range(3)] for _ in range(3)]
 
     def draw_board(self):
-        """
-        Draw the board of Tic-Tac-Toe game
-        """
+   
+        for i, row in enumerate(self.grid):
+            print(" | ".join(cell if cell != " " else " " for cell in row))
+
+            if i < len(self.grid) - 1:
+                print("-" * 9)
+
 
     def update_board(self, row: int, col: int, symbol: str) -> bool:
         """
